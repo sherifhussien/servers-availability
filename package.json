@@ -4,8 +4,17 @@
   "description": "A node module that determines the availability of a given list of servers and then returns an available server with the lowest priority number. ",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node index.js",
+    "watch": "nodemon index.js"
   },
   "author": "Sherif Hussien",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
 }
