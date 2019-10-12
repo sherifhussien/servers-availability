@@ -1,0 +1,11 @@
+{
+  "name": "servers-availablity",
+  "version": "1.0.0",
+  "description": "A node module that determines the availability of a given list of servers and then returns an available server with the lowest priority number. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Sherif Hussien",
+  "license": "ISC"
+}
