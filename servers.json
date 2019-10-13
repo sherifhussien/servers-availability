@@ -1,0 +1,23 @@
+{
+    "test": [{
+            "url": "http://google.com",
+            "priority": 3
+        }, {
+            "url": "http://facebook.com",
+            "priority": 2
+        },{
+            "url": "http://amazon.com",
+            "priority": 1
+        }],
+    "development": [{
+        "url": "http://google.com",
+        "priority": 5
+    }, {
+        "url": "http://localhost:3000/201",
+        "priority": 6
+    }, {
+        "url": "http://facebook.com",
+        "priority": 3
+    }]
+
+}

@@ -1,5 +1,5 @@
 const axios = require('axios').default; // Promise based HTTP client
-const servers = require('./servers'); // list of servers
+const servers = require('./servers.json')[process.env.NODE_ENV]; // list of servers
 
 // setup the global config
 axios.defaults.timeout = 5000;
@@ -27,19 +27,15 @@ async function get_request(server){
 }
 
 async function findServer(){
-    const requests = servers.map(s => get_request(s))
+    const requests = servers.map(s => get_request(s)); // array of request promises
     const responses = await Promise.all(requests);
     const online_servers = responses.filter(r => r.response!=null).map(response => response.server);
-    
     if(!online_servers.length){
         throw new Error('All servers are unavailable');
     }
-
     const lowest_priority_server = online_servers.reduce((acc, curr) => (acc.priority < curr.priority)?acc:curr);
     return lowest_priority_server;
 }
-
-// findServer().then(res => {}).catch(err => {})
 
 module.exports = {
     findServer,
