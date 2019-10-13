@@ -39,8 +39,9 @@ async function findServer(){
     return lowest_priority_server;
 }
 
+// findServer().then(res => {}).catch(err => {})
 
 module.exports = {
-    findServer
+    findServer,
+    get_request
 }
-
